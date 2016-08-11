@@ -33,9 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.11'
+  gem 'byebug',  '9.0.0', platform: :mri
 end
 
 group :development do
@@ -46,3 +45,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg', '0.18.4'
+end
