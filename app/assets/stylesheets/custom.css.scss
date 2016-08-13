@@ -1,0 +1,43 @@
+.body {
+    padding-top: 10px;
+}
+
+.navbar {
+    a:hover {
+        color: Black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+}
+
+.navbar-header {
+    .navbar-brand {
+        font-size: 1.5em;
+        padding: 1.3em;
+    }
+}
+
+
+.navbar-right {
+    padding: 1.5em;
+    a {
+        margin-right: 1em;
+    }
+}
+
+.container {
+    h1 {
+        text-align: center;
+    }
+}
+
+#button {
+    color: white;
+}
+
+#button:hover {
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+
+

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+    <div class = "container">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+            <%= link_to "Stand Strong Together", root_path %>
+        </div>
+      </div>
+      <div class= "navbar-right">
+        <%= link_to "About", about_path %>
+        <%= link_to "Contact", contact_path %>
+        <%= link_to "Help", help_path %>
+        <%= link_to "Share Your Story", "posts#new" , 
+              class: "btn btn-primary", id: "button" %>
+      </div>
+    </div>
+</nav>
