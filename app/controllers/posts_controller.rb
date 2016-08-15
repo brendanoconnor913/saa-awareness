@@ -20,6 +20,16 @@ class PostsController < ApplicationController
  def edit
  end
  
+  # DELETE /posts/1
+  # DELETE /posts/1.json
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+ 
  def feed
    
  end
@@ -67,13 +77,5 @@ class PostsController < ApplicationController
       params.require(:post).permit(:content, :city, :state, :country, :created_at, :updated_at)
     end
     
-    # DELETE /posts/1
-    # DELETE /posts/1.json
-    def destroy
-      @post.destroy
-      respond_to do |format|
-        format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-        format.json { head :no_content }
-      end
-    end
+
 end
