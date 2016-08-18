@@ -1,7 +1,7 @@
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div class="alert alert-danger">
+      <h2>Please fix the following <%= "error".pluralize(@post.errors.count) %> then resubmit</h2>
 
       <ul>
       <% @post.errors.full_messages.each do |message| %>
@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+  
+  We ask that you change any identifying names of people or orginizations
+  involved, as this site is only intended to help people get their stories out. Thank you
+  
   <div class ="story-form">
     <div class="field">
       <%= f.label :content, id:"hide"  %><br>
@@ -25,11 +29,11 @@
       <%= f.text_field :state %>
     </div>
     <div class="field">
-      <%= f.label :country %><br>
+      <%= f.label :country, "Country (non-U.S.)" %><br>
       <%= f.text_field :country %>
     </div>
     <div class="actions">
-       <%= f.submit "Share" %>
+       <%= f.submit "Share", class:"btn btn-primary" %>
     </div>
   </div>
   
