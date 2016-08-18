@@ -1,13 +1,13 @@
 class Post < ActiveRecord::Base
     validates :content, presence: true
-    validate do
-        valid_location
-    end
-    
-    
+    validates :city, presence: true
+    validate {valid_location}
     
     private
         def valid_location
-           self.errors.add(:base, "test")
+            if self.country.empty? && self.state.empty?
+                self.errors.add(:base, "You must enter a state (if in U.S.) or Country")
+            end
         end
+
 end
