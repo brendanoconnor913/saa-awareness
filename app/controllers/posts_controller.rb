@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :admin, only: [:index, :edit, :destroy, :update]
+  
   # GET /posts
   # GET /posts.json
   def index
@@ -10,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    # show entire post on page and include a back button
   end
 
   # GET /posts/new
@@ -77,5 +79,10 @@ class PostsController < ApplicationController
       params.require(:post).permit(:content, :city, :state, :country, :created_at, :updated_at)
     end
     
+    def admin
+      unless logged_in?
+        redirect_to login_path    
+      end
+    end
 
 end
