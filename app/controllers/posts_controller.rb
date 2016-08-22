@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
  
  def feed
-   
+   @post = Post.paginate(page: params[:page], per_page: 10)
  end
 
   # POST /posts

@@ -5,10 +5,9 @@ class PostsControllerTest < ActionController::TestCase
     @post = posts(:one)
   end
 
-  test "should get index" do
+  test "fail to get index when logged out" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:posts)
+    assert_response :redirect
   end
 
   test "should get new" do
@@ -29,21 +28,23 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
+  test "shouldn't get edit unless logged in" do
     get :edit, id: @post
-    assert_response :success
+    assert_response :redirect
   end
 
-  test "should update post" do
+  test "shouldn't update post when logged out" do
     patch :update, id: @post, post: { city: @post.city, content: @post.content, country: @post.country, created_at: @post.created_at, state: @post.state, updated_at: @post.updated_at }
-    assert_redirected_to post_path(assigns(:post))
+    assert_redirected_to login_path
   end
 
-  test "should destroy post" do
-    assert_difference('Post.count', -1) do
+  test "shouldn't destroy post when logged out" do
+    assert_difference('Post.count', 0) do
       delete :destroy, id: @post
     end
 
-    assert_redirected_to posts_path
+    assert_redirected_to login_path
   end
+  
+  
 end

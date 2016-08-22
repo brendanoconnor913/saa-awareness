@@ -63,3 +63,15 @@ body {
     }
 }
 
+.card {
+    #location {
+        color: DarkGray;
+    }
+    border-style: solid;
+    border-width: 1px;
+    border-radius: .75em;
+    border-color: DarkGray;
+    background-color: #f9f9f9;
+    padding: 1em;
+    margin: 1em;
+}
