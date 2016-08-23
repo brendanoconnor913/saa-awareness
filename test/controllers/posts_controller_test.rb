@@ -17,7 +17,7 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     assert_difference('Post.count') do
-      post :create, post: { city: @post.city, content: @post.content, country: @post.country, created_at: @post.created_at, state: @post.state, updated_at: @post.updated_at }
+      post :create, post: {title: @post.title, city: @post.city, content: @post.content, country: @post.country, created_at: @post.created_at, state: @post.state, updated_at: @post.updated_at }
     end
 
     assert_redirected_to post_path(assigns(:post))

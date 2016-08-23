@@ -1,0 +1,31 @@
+<%= form_for(:feedback, url: contact_path) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div class="alert alert-danger">
+      <h2>Please fix the following <%= "error".pluralize(@feedback.errors.count) %> then resubmit</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class ="field col-lg-12">
+   <div class="field col-lg-1">
+      <%= f.label :email  %><br>
+      <%= f.text_field :email  %>
+   </div>
+   
+   <div class="field col-lg-12">
+      <%= f.label :content  %><br>
+      <%= f.text_area :content, class: "col-lg-6", rows: 10 %> 
+   </div>
+    
+   <div class="field col-lg-12">
+       <%= f.submit "Send", class:"btn btn-primary" %>
+    </div>
+  </div>
+  
+<% end %>

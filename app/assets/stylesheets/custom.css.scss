@@ -47,6 +47,7 @@
 text_area#story {
     width: fill;
     height: 10em;
+    display: block;
 }
 
 body {
@@ -74,4 +75,10 @@ body {
     background-color: #f9f9f9;
     padding: 1em;
     margin: 1em;
+}
+
+.contact-form {
+    .field {
+       width: 100%;
+    }
 }

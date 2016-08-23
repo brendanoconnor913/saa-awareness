@@ -15,29 +15,29 @@
   involved, as this site is only intended to help people get their stories out. Thank you
   
   <div class ="story-form">
-   <div class="field">
+   <div class="field col-lg-12">
       <%= f.label :title  %><br>
       <%= f.text_field :title  %>
     </div>
    
-    <div class="field">
-      <%= f.label :content, id:"hide"  %><br>
-      <%= f.text_area :content, class: "col-lg-12", rows: 10 %>
+    <div class="field col-lg-12">
+      <%= f.label :content  %><br>
+      <%= f.text_area :content, class: "col-lg-5", rows: 10 %>
     </div>
     
-    <div class="field">
+    <div class="field col-lg-12">
       <%= f.label :city %><br>
       <%= f.text_field :city %>
     </div>
-    <div class="field">
+    <div class="field col-lg-12">
       <%= f.label :state %><br>
       <%= f.text_field :state %>
     </div>
-    <div class="field">
+    <div class="field col-lg-12">
       <%= f.label :country, "Country (non-U.S.)" %><br>
       <%= f.text_field :country %>
     </div>
-    <div class="actions">
+    <div class="field col-lg-12">
        <%= f.submit "Share", class:"btn btn-primary" %>
     </div>
   </div>
