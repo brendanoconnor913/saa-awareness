@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
     validates :content, presence: true
     validates :city, presence: true
+    validates :title, presence: true
     validate {valid_location}
     
     private

@@ -1,23 +1,7 @@
 
 <div class = "container">
     <h1>Personal Stories</h1>
-    <%= will_paginate @post %>
-        <% @post.each do |post| %>
-            <div class="container col-md-6">
-                <div class="card">
-                    <div id="text">
-                        <%= post.content %>
-                    </div>
-                    
-                    <div id="location">
-                        <%= post.city %>
-                        <%= post.state %>
-                        <%= post.country %> 
-                    </div>
-                </div>
-            </div>
-        <% end %>
-    <%= will_paginate @post %>
+    <%= render 'cards' %>
 </div>
 
 

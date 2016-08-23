@@ -1,0 +1,30 @@
+<%= will_paginate @post %>
+        <% @post.each do |post| %>
+            <div class="container col-md-6">
+                <div class="card">
+                    <h4>
+                        <b>
+                           <%= post.title %> 
+                        </b>
+                    </h4>
+                    
+                    <div id="text">
+                        <%= truncate(post.content, :length => 350) %>
+                        <% if post.content.length > 350 %>
+                            <%= link_to  "more", post_path(post) %>
+                        <% end %>
+                    </div>
+                    
+                    <div id="location">
+                        <% if post.state %>
+                            <%= post.city %>,
+                            <%= post.state %>
+                        <% else %>
+                            <%= post.city %>,
+                            <%= post.country %> 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+<%= will_paginate @post %>
