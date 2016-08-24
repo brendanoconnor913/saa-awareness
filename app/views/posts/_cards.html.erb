@@ -16,7 +16,7 @@
                     </div>
                     
                     <div id="location">
-                        <% if post.state %>
+                        <% if post.state.present? %>
                             <%= post.city %>,
                             <%= post.state %>
                         <% else %>
