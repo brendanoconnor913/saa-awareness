@@ -6,9 +6,9 @@ class ContactMailer < ApplicationMailer
   #   en.contact_mailer.feedback.subject
   #
   def feedback(message)
-    @comment = #message.content
-    @from = #message.sender
+    @comment = message.content
+    @from = message.email
 
-    mail to: "brendan.oconnor.913@gmail.com", subject: "Feedback from site"
+    mail to: "brendan.oconnor.913@gmail.com", subject: "Feedback from SAA-site"
   end
 end
