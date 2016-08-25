@@ -1,26 +1,27 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
   
-  <p>
-    <strong>Content:</strong>
-    <%= @post.content %>
-  </p>
-  
-  <p>
-    <strong>City:</strong>
-    <%= @post.city %>
-  </p>
-  
-  <p>
-    <strong>State:</strong>
-    <%= @post.state %>
-  </p>
-  
-  <p>
-    <strong>Country:</strong>
-    <%= @post.country %>
-  </p>
-  
+  <div class="card">
+                    <h4>
+                        <b>
+                           <%= @post.title %> 
+                        </b>
+                    </h4>
+                    
+                    <div id="text">
+                        <%= @post.content %>
+                    </div>
+                    
+                    <div id="location">
+                        <% if @post.state.present? %>
+                            <%= @post.city %>,
+                            <%= @post.state %>
+                        <% else %>
+                            <%= @post.city %>,
+                            <%= @post.country %> 
+                        <% end %>
+                    </div>
+                </div>
   
   <%= link_to 'Home', root_path %>
 </div>
